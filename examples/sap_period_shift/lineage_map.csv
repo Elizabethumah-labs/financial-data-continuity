@@ -1,0 +1,13 @@
+source_field,target_field,transformation
+BKPF.BUKRS,ACDOCA.RBUKRS,copied
+BKPF.BELNR,ACDOCA.BELNR,renumbered; legacy number kept in ACDOCA.AWREF
+BKPF.GJAHR,ACDOCA.GJAHR,copied
+BKPF.MONAT,ACDOCA.POPER,"copied, zero-padded to 3 digits"
+BKPF.BUDAT,ACDOCA.BUDAT,copied
+BSEG.BUZEI,ACDOCA.DOCLN,zero-padded to 6 digits
+BSEG.HKONT,ACDOCA.RACCT,account mapping table (config/account_mapping.csv)
+BSEG.KOSTL,ACDOCA.RCNTR,copied
+BSEG.GEBER,ACDOCA.RFUND,copied
+BSEG.GRANT_NBR,ACDOCA.RGRANT_NBR,copied
+BSEG.SHKZG + BSEG.DMBTR,ACDOCA.HSL,"signed amount: S = +, H = -"
+BKPF.WAERS,ACDOCA.RHCUR,copied

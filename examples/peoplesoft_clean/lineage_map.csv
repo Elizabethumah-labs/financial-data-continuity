@@ -1,0 +1,12 @@
+source_field,target_field,transformation
+PS_JRNL_HEADER.BUSINESS_UNIT,AccountCombination[segment 1],prefix 'BU' removed
+PS_JRNL_HEADER.JOURNAL_ID,JournalName,renumbered; legacy id kept in ReferenceId
+PS_JRNL_HEADER.JOURNAL_DATE,AccountingDate,copied
+PS_JRNL_HEADER.FISCAL_YEAR + ACCOUNTING_PERIOD,PeriodName,formatted YYYY-MM
+PS_JRNL_LN.JOURNAL_LINE,LineNumber,copied
+PS_JRNL_LN.ACCOUNT,AccountCombination[segment 2],account mapping table
+PS_JRNL_LN.DEPTID,AccountCombination[segment 3],copied
+PS_JRNL_LN.FUND_CODE,AccountCombination[segment 4],copied; blank -> 0000
+PS_JRNL_LN.PROJECT_ID,AccountCombination[segment 5],copied; blank -> 000000
+PS_JRNL_LN.MONETARY_AMOUNT,EnteredDr / EnteredCr,split by sign
+PS_JRNL_LN.CURRENCY_CD,CurrencyCode,copied

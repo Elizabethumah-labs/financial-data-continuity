@@ -1,0 +1,168 @@
+{
+  "record_type": "FDCF AI-readiness record",
+  "created_utc": "2026-10-23T03:42:44Z",
+  "migration_path": "PeopleSoft -> cloud ERP",
+  "dataset": {
+    "description": "General-ledger journal lines after migration, read back from the target system",
+    "canonical_fields": [
+      "doc_id",
+      "xref",
+      "line_no",
+      "company",
+      "fiscal_year",
+      "period",
+      "posting_date",
+      "account",
+      "cost_center",
+      "fund",
+      "grant",
+      "amount",
+      "currency"
+    ],
+    "periods_covered": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "fiscal_years": [
+      2026
+    ],
+    "lines": 4293,
+    "documents": 1861
+  },
+  "provenance": {
+    "source_tables": {
+      "PS_JRNL_HEADER": {
+        "rows": 1861,
+        "sha256": "cad6330a8d812eb2a0b1402e7dc1f1b849e218a2029c53b1dd1851654dcdfb2a"
+      },
+      "PS_JRNL_LN": {
+        "rows": 4293,
+        "sha256": "5a27a8b5b64df1fe73454359cef4e9275d700e2892b935bf90672b1baf8867dc"
+      }
+    },
+    "target_tables": {
+      "GL_JOURNAL_IMPORT": {
+        "rows": 4293,
+        "sha256": "7a4b01d910cc1a32b5a3ada5be24dd166fadbe8e712b30d7e2535fa3a1df214c"
+      }
+    },
+    "account_mapping_sha256": "caacbc9eb40e377948c72854b31d800851ceb3dccf651a045355e52f6f353a35",
+    "acceptance_registry_version": "1.0",
+    "scope_exclusions": {
+      "rule": null,
+      "documents_excluded": 0,
+      "legacy_document_ids": []
+    }
+  },
+  "completeness_profile": {
+    "share_of_lines_with_blank_dimension": {
+      "cost_center": 0.0,
+      "fund": 0.0,
+      "grant": 0.6692
+    },
+    "expense_lines_in_grant_fund_without_grant": 0
+  },
+  "reconciliation": {
+    "go_live_decision": "GO",
+    "checks": [
+      {
+        "id": "L1-01",
+        "level": 1,
+        "criterion": "Every in-scope legacy document is loaded exactly once",
+        "status": "PASS",
+        "cells_over_tolerance": 0,
+        "largest_difference": 0.0
+      },
+      {
+        "id": "L1-02",
+        "level": 1,
+        "criterion": "Each loaded document carries the same gross amount as its source",
+        "status": "PASS",
+        "cells_over_tolerance": 0,
+        "largest_difference": 0.0
+      },
+      {
+        "id": "L1-03",
+        "level": 1,
+        "criterion": "Every loaded document balances (debits equal credits)",
+        "status": "PASS",
+        "cells_over_tolerance": 0,
+        "largest_difference": 0.0
+      },
+      {
+        "id": "L1-04",
+        "level": 1,
+        "criterion": "Total debits and total credits agree for the company and year",
+        "status": "PASS",
+        "cells_over_tolerance": 0,
+        "largest_difference": 0.0
+      },
+      {
+        "id": "L2-01",
+        "level": 2,
+        "criterion": "Account activity agrees for every account and period",
+        "status": "PASS",
+        "cells_over_tolerance": 0,
+        "largest_difference": 0.0
+      },
+      {
+        "id": "L2-02",
+        "level": 2,
+        "criterion": "Cumulative account balances agree at every period end",
+        "status": "PASS",
+        "cells_over_tolerance": 0,
+        "largest_difference": 0.0
+      },
+      {
+        "id": "L3-01",
+        "level": 3,
+        "criterion": "Statement of activities lines agree for every period",
+        "status": "PASS",
+        "cells_over_tolerance": 0,
+        "largest_difference": 0.0
+      },
+      {
+        "id": "L3-02",
+        "level": 3,
+        "criterion": "Statement of net position lines agree at every period end",
+        "status": "PASS",
+        "cells_over_tolerance": 0,
+        "largest_difference": 0.0
+      },
+      {
+        "id": "L3-03",
+        "level": 3,
+        "criterion": "Grant expenditure report agrees for every grant and period",
+        "status": "PASS",
+        "cells_over_tolerance": 0,
+        "largest_difference": 0.0
+      },
+      {
+        "id": "L3-04",
+        "level": 3,
+        "criterion": "Cost-center expense report agrees for every cost center and period",
+        "status": "PASS",
+        "cells_over_tolerance": 0,
+        "largest_difference": 0.0
+      }
+    ]
+  },
+  "intended_uses": [
+    "financial reporting and analytics on the new system",
+    "training or operating forecasting, anomaly-detection and generative-AI tools on ledger history"
+  ],
+  "known_limitations": [
+    "Figures are verified at the levels listed under 'reconciliation' only.",
+    "Documents excluded by the scope rule are absent from the target by design."
+  ]
+}

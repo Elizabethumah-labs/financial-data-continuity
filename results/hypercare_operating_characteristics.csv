@@ -1,0 +1,7 @@
+shift_in_sigma,signal_within_3_closes_pct,signal_within_6_closes_pct
+0.0,6.8,14.2
+0.5,9.8,21.6
+1.0,21.2,45.0
+1.5,40.6,72.8
+2.0,58.9,89.4
+3.0,89.8,99.8

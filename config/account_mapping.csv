@@ -1,0 +1,18 @@
+legacy_account,legacy_name,class,new_account
+100000,Cash - operating,asset,1010
+110000,Accounts receivable,asset,1200
+115000,Grants receivable,asset,1250
+150000,Equipment,asset,1600
+200000,Accounts payable,liability,2010
+210000,Accrued payroll,liability,2100
+300000,Net position,equity,3000
+400000,Tuition and fees revenue,revenue,4010
+410000,Grant revenue,revenue,4200
+420000,Other revenue,revenue,4900
+500000,Salaries,expense,5010
+505000,Fringe benefits,expense,5050
+600000,Supplies,expense,6100
+605000,Lab supplies,expense,6100
+610000,Travel,expense,6200
+620000,Contractual services,expense,6300
+630000,Depreciation,expense,6800

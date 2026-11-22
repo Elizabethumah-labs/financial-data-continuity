@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Financial Data Continuity Framework (FDCF): toolkit for verifying financial records across ERP migrations"
+authors:
+  - family-names: Umah
+    given-names: Elizabeth
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add your ORCID iD
+version: 0.1.0
+date-released: 2026-10-23
+license: MIT
+repository-code: "https://github.com/Elizabethumah-labs/financial-data-continuity"
+keywords:
+  - ERP migration
+  - data migration testing
+  - financial reconciliation
+  - SAP S/4HANA
+  - PeopleSoft
+  - statistical process control
+  - data provenance

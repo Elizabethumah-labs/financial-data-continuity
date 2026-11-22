@@ -1,0 +1,75 @@
+# Acceptance registry: what must survive the migration, who owns it, and the
+# largest difference allowed before someone must investigate.
+# Written and approved BEFORE any data moves (pre-registered acceptance criteria).
+#
+# tolerance_abs is in the ledger currency (USD) per compared cell
+# (per document, per account-period, per report line-period, ...).
+
+registry_version: "1.0"
+currency: USD
+items:
+  # ---------------- Level 1: records ----------------
+  - id: L1-01
+    level: 1
+    name: Every in-scope legacy document is loaded exactly once
+    check: doc_completeness
+    tolerance_abs: 0
+    owner: Migration lead
+  - id: L1-02
+    level: 1
+    name: Each loaded document carries the same gross amount as its source
+    check: doc_amounts
+    tolerance_abs: 0.01
+    owner: Migration lead
+  - id: L1-03
+    level: 1
+    name: Every loaded document balances (debits equal credits)
+    check: doc_balanced
+    tolerance_abs: 0.005
+    owner: General ledger accountant
+  - id: L1-04
+    level: 1
+    name: Total debits and total credits agree for the company and year
+    check: control_totals
+    tolerance_abs: 0.01
+    owner: General ledger accountant
+
+  # ---------------- Level 2: balances ----------------
+  - id: L2-01
+    level: 2
+    name: Account activity agrees for every account and period
+    check: tb_activity
+    tolerance_abs: 1.00
+    owner: Controller
+  - id: L2-02
+    level: 2
+    name: Cumulative account balances agree at every period end
+    check: tb_cumulative
+    tolerance_abs: 1.00
+    owner: Controller
+
+  # ---------------- Level 3: reports ----------------
+  - id: L3-01
+    level: 3
+    name: Statement of activities lines agree for every period
+    check: report_activities
+    tolerance_abs: 1.00
+    owner: Financial reporting manager
+  - id: L3-02
+    level: 3
+    name: Statement of net position lines agree at every period end
+    check: report_position
+    tolerance_abs: 1.00
+    owner: Financial reporting manager
+  - id: L3-03
+    level: 3
+    name: Grant expenditure report agrees for every grant and period
+    check: report_grant
+    tolerance_abs: 1.00
+    owner: Sponsored programs accounting
+  - id: L3-04
+    level: 3
+    name: Cost-center expense report agrees for every cost center and period
+    check: report_cost_center
+    tolerance_abs: 1.00
+    owner: Budget office

@@ -1,0 +1,8 @@
+{
+  "title": "Financial Data Continuity Framework (FDCF): toolkit for verifying financial records across ERP migrations",
+  "upload_type": "software",
+  "description": "Open-source toolkit implementing the Financial Data Continuity Framework: a pre-registered acceptance registry, a three-level go-live gate (records, balances, reports), control-chart monitoring through the first closes, and a lineage and AI-readiness record. Includes SAP ECC to S/4HANA and PeopleSoft to cloud ERP reference paths and a seeded-error validation study on synthetic data.",
+  "creators": [{"name": "Umah, Elizabeth"}],
+  "license": "MIT",
+  "keywords": ["ERP migration", "data migration testing", "financial reconciliation", "SAP S/4HANA", "PeopleSoft", "statistical process control", "data provenance"]
+}
