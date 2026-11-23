@@ -73,7 +73,6 @@ tests/           pytest suite
 If you use this toolkit, please cite the software: https://doi.org/10.5281/zenodo.24450672 (details in [`CITATION.cff`](CITATION.cff)).
 
 Methodology preprint: Umah, E. (2026). *The Financial Data Continuity Framework: Verifying Financial Records Across ERP Migrations* (version 0.1). Zenodo. https://doi.org/10.5281/zenodo.24450882
-See [`CITATION.cff`](CITATION.cff). A methodology preprint accompanies this release.
 
 ## License
 
